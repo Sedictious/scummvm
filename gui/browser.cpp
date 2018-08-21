@@ -21,9 +21,9 @@
  */
 
 #include "gui/browser.h"
-#include "gui/widgets/edittext.h"
 #include "gui/gui-manager.h"
 #include "gui/widgets/list.h"
+#include "gui/widgets/edittext.h"
 
 #include "common/config-manager.h"
 #include "common/system.h"
@@ -54,6 +54,7 @@ BrowserDialog::BrowserDialog(const char *title, bool dirBrowser)
 	_showHidden = false;
 
 	// Headline - TODO: should be customizable during creation time
+	new StaticTextWidget(this, "Browser.Headline", title);
 	
 	// Current path - TODO: handle long paths ?
 	_currentPath = new EditTextWidget(this, "Browser.Path", "DUMMY");
